@@ -144,24 +144,24 @@ finbert = BertForSequenceClassification.from_pretrained(
 tokenizer_sentiment = BertTokenizer.from_pretrained("yiyanghkust/finbert-tone")
 nlp = pipeline("sentiment-analysis", model=finbert, tokenizer=tokenizer_sentiment)
 
-def multi_processing():
-    df = pd.read_csv("C:\Work\Supplier Management\Company Names.csv")
-    company_names = df['Entity Name'].to_list()
+# def multi_processing():
+#     df = pd.read_csv("C:\Work\Supplier Management\Company Names.csv")
+#     company_names = df['Entity Name'].to_list()
     
-    pool = multiprocessing.Pool(processes=4)
-    answers = pool.map(extract_summary_sentiment, company_names)
-    final_result = []
-    for ans in answers:
-        final_result.extend(ans)
+#     pool = multiprocessing.Pool(processes=4)
+#     answers = pool.map(extract_summary_sentiment, company_names)
+#     final_result = []
+#     for ans in answers:
+#         final_result.extend(ans)
     
 
-    # Close the pool
-    pool.close()
-    pool.join()
+#     # Close the pool
+#     pool.close()
+#     pool.join()
 
-    return final_result
+#     return final_result
 def extract_summary_sentiment1(company):
-    links_list = web_links(company, 2)
+    links_list = web_links(company, 11)
     if links_list == None: 
         links_list = weblink_news_api(company)
     
