@@ -161,7 +161,7 @@ nlp = pipeline("sentiment-analysis", model=finbert, tokenizer=tokenizer_sentimen
 
 #     return final_result
 def extract_summary_sentiment1(company):
-    links_list = web_links(company, 11)
+    links_list = web_links(company, 20)
     if links_list == None: 
         links_list = weblink_news_api(company)
     
