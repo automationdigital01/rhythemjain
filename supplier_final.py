@@ -225,7 +225,7 @@ def main():
             )
         with col3:
             st.image(
-                "C:\\Work\\Supplier Management\\transformers\\logo\\USER LOGin.png",
+                "logo/USER LOGin.png",
                 width=70,
             )
             st.markdown(
@@ -246,7 +246,7 @@ def main():
     
     # Streamlit Sidebar
     st.sidebar.image(
-        "C:\\Work\\Supplier Management\\transformers\\logo\\TECHNIP_ENERGIES_LOGO.png",
+        "logo/TECHNIP_ENERGIES_LOGO.png",
         width=100,
     )
 
